@@ -1,0 +1,18 @@
+public class anagramas_e_permutacoes_de_strings {
+
+    public static void generatePermutations(String prefix, String str) {
+        int n = str.length();
+        if (n == 0) {
+            System.out.println(prefix);
+        } else {
+            for (int i = 0; i < n; i++) {
+                generatePermutations(prefix + str.charAt(i), str.substring(0, i) + str.substring(i + 1));
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        String input = "abc";
+        generatePermutations("", input);
+    }
+}
